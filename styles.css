@@ -121,3 +121,11 @@ tr.total td {
 
 /*The key difference between tr[class="total"] and tr.total is that the first will select tr elements where the only class is total. The second will select tr elements where the class includes total.*/
 
+tr.total td:nth-of-type(3) { /*select td ke-3 yang ada di dalam tr.total*/
+  padding-right: 0.5rem;
+}
+
+
+
+
+
