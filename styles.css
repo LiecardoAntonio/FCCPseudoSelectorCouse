@@ -1,4 +1,4 @@
-span[class~="sr-only"] { /*!important bakalan bikin si style gabisa di overwrite kalau misalkan ada code dibawah yang mau ngubah lagi*/
+span[class~="sr-only"] {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   clip-path: inset(50%) !important;
@@ -32,7 +32,7 @@ h1 .flex {
   gap: 1rem;
 }
 
-h1 .flex span:first-of-type { /*Dia bakal target si AcmeWidgetCorp karena sebenernya dia elemen h1 yang pertama (dia jadi dibawah karena si h1.flex pake flex-direction column-reverse*/
+h1 .flex span:first-of-type {
   font-size: 0.7em;
 }
 
@@ -54,7 +54,7 @@ section {
   top: 0;
   background: #0a0a23;
   color: #fff;
-  padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0; /*function calc bisa ngitungin buat kita ukurannya*/
+  padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
   margin: 0 -2px;
 }
 
@@ -68,27 +68,13 @@ section {
   padding: 0 0.75rem 1.5rem 0.75rem;
 }
 
-span:not(.sr-only) { /*karena selector span diatas udah dikasih !important ini selector sebenernya bisa diganti ke span aja*/
-  font-weight: normal;
-}
-
-/*span { 
-  font-weight: normal;
-}*/
-
 table {
-  border-collapse: collapse; /*Ini bikin border-border yang ada untuk setiap cell yang gaada isinya dicollapse aja untuk liat coba kasih border ke selector (tr>*) */
+  border-collapse: collapse;
   border: 0;
   width: 100%;
   position: relative;
   margin-top: 3rem;
 }
-
-/*
-tr>* {
-  border: 1px solid black;
-}
-*/
 
 table caption {
   color: #356eaf;
@@ -110,8 +96,13 @@ tbody th {
 }
 
 tr[class="total"] {
-  font-weight: bold;
   border-bottom: 4px double #0a0a23;
+  font-weight: bold;
+}
+
+tr[class="total"] th {
+  text-align: left;
+  padding: 0.5rem 0 0.25rem 0.5rem;
 }
 
 tr.total td {
@@ -119,13 +110,42 @@ tr.total td {
   padding: 0 0.25rem;
 }
 
-/*The key difference between tr[class="total"] and tr.total is that the first will select tr elements where the only class is total. The second will select tr elements where the class includes total.*/
-
-tr.total td:nth-of-type(3) { /*select td ke-3 yang ada di dalam tr.total*/
+tr.total td:nth-of-type(3) {
   padding-right: 0.5rem;
 }
 
+tr.total:hover {
+  background-color: #99c9ff;
+}
 
+td.current {
+  font-style: italic;
+}
 
+tr.data {
+  background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+}
 
+tr.data th {
+  text-align: left;
+  padding-top: 0.3rem;
+  padding-left: 0.5rem;
+}
 
+tr.data th .description {
+  display: block;
+  font-weight: normal;
+  font-style: italic;
+  padding: 1rem 0 0.75rem;
+  margin-right: -13.5rem;
+}
+
+tr.data td {
+  vertical-align: top;
+  padding: 0.3rem 0.25rem 0;
+  text-align: right;
+}
+
+tr.data td:last-of-type {
+  padding-right: 0.5rem;
+}
