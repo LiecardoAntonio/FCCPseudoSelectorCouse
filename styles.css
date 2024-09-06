@@ -1,5 +1,18 @@
+span[class~="sr-only"] {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0;
+  margin: -1px;
+}
+
 html {
-  box-sizing: border-box; /*bikin margin dan padding langsung keitung bareng width dan height*/
+  box-sizing: border-box;
 }
 
 body {
@@ -7,23 +20,10 @@ body {
   color: #0a0a23;
 }
 
-span[class~="sr-only"] {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  white-space: nowrap;
-  position: absolute;
-  padding: 0;
-  margin: -1px;
-}
-
 h1 {
   max-width: 37.25rem;
   margin: 0 auto;
-  padding: 1.5rem 1.25rem; 
+  padding: 1.5rem 1.25rem;
 }
 
 h1 .flex {
@@ -32,11 +32,11 @@ h1 .flex {
   gap: 1rem;
 }
 
-h1 .flex span:first-of-type { /*Dia akan kena text yang AcmeWidgetCorp, karena dia sebenernya elemen pertama yang ke-reversed*/
+h1 .flex span:first-of-type {
   font-size: 0.7em;
-} 
+}
 
-h1 .flex span:last-of-type { /*kebalikkan yang atas*/
+h1 .flex span:last-of-type {
   font-size: 1.2em;
 }
 
@@ -53,7 +53,7 @@ section {
   top: 0;
   background: #0a0a23;
   color: #fff;
-  margin: 0 -2px;
   padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+  margin: 0 -2px;
+  z-index: 999;
 }
-
